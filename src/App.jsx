@@ -1,11 +1,23 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import Home from "./components/pages/home/Home"
+import Login from "./components/pages/login/Login"
+import Formulario from "./components/pages/formulario/Formulario"
 
 
 function App() {
 
   return (
-    <>
-    <h1>Home</h1>
-    </>
+    <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/formulario" element={<Formulario />} />
+            
+          </Routes>
+        </BrowserRouter>
+    </div>
   )
 }
 
