@@ -1,0 +1,49 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "En busca del destino",
+      "description": "Un joven, tras descubrir su talento con las matemáticas, deberá decidir si seguir con su vida de siempre o aprovechar sus grandes cualidades intelectuales en alguna universidad.",
+      "img": "https://i.pinimg.com/originals/b4/35/3e/b4353e455f25e684ec1c33cb4afefa74.jpg",
+      "genre": "Drama",
+      "createdAt": "1995",
+      "isLiked": false
+    },
+    {
+      "id": 2,
+      "name": "En busca de la felicidad",
+      "description": "La vida es una lucha para Chris Gardner. Expulsado de su apartamento, él y su joven hijo se encuentran solos sin ningún lugar a donde ir. A pesar de que Chris eventualmente consigue trabajo como interno en una prestigiada firma financiera, la posición no le da dinero. El dúo debe vivir en un albergue y enfrentar muchas dificultades, pero Chris no se da por vencido y lucha por conseguir una vida mejor para él y su hijo.",
+      "img": "https://www.elcaminanteysusombra.com/wp/wp-content/uploads/2015/09/felicidad.jpg",
+      "genre": "Biográfica",
+      "createdAt": "2006",
+      "isLiked": true
+    },
+    {
+      "id": 3,
+      "name": "La vida es bella",
+      "description": "Un hombre construye una elaborada fantasía para proteger a su hijo en un campo de concentración nazi.",
+      "img": "https://hips.hearstapps.com/hmg-prod/images/vida-es-bella2-1535453128.jpg",
+      "genre": "Drama",
+      "createdAt": "1997",
+      "isLiked": false
+    },
+    {
+      "name": "Captain Fantastic",
+      "description": "es una película estadounidense de 2016 del género comedia dramática escrita y dirigida por Matt Ross y protagonizada por Viggo Mortensen. La historia se centra en un padre de familia que, tras el suicidio de su esposa, deberá intentar mantener los valores que les ha inculcado a sus hijos, a pesar de la presión social.",
+      "createdAt": "2016",
+      "img": "https://proyectorfantasma.com.ar/wp-content/uploads/2016/11/captain1.jpg",
+      "genre": "Drama",
+      "isLiked": true,
+      "id": 4
+    },
+    {
+      "name": "Megalodon 2",
+      "description": "Meg 2: The Trench es una película de ciencia ficción y acción estadounidense, dirigida por Ben Wheatley, escrita por Jon Hoeber, Erich Hoeber y Dean Georgaris, basada en la novela Meg: la fosa de Steve Alten.",
+      "createdAt": "2023",
+      "img": "https://www.moviementarios.com/wp-content/uploads/2023/08/megalodon-2-la-fosa.jpg",
+      "genre": "Terror",
+      "isLiked": false,
+      "id": 5
+    }
+  ]
+}
