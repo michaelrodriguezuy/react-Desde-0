@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Typography, TextField, Button, Grid } from '@mui/material'
 
 import { useFormik } from 'formik'
@@ -7,6 +7,8 @@ import * as Yup from 'yup'
 import './Formulario.css'
 
 const Formulario = () => {
+
+    const navigate = useNavigate()
 
     let valoresIniciales = {
         nombre: "",
@@ -24,6 +26,7 @@ const Formulario = () => {
     const enviarForm = (data) => {
         //envio la data al backend
         console.log(data);
+        navigate('/')
     }
     
     const {handleSubmit, handleChange, values, errors} = useFormik({

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 import confetti from 'canvas-confetti';
@@ -6,6 +6,7 @@ import styles from './Peliculas.module.css'
 import CreateMovieModal from '../../common/createMovieModal/CreateMovideModal';
 import Pelicula from './Pelicula';
 import Header from '../../common/header/Header';
+import { AuthContext } from '../../../context/AuthContext';
 
 const Peliculas = () => {
 
@@ -59,6 +60,7 @@ const Peliculas = () => {
             .then(response => setIsMovieDelete(true))
             .catch(error => console.log(error))
     }
+    
 
     return (
         <>
