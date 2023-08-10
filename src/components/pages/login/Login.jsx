@@ -32,6 +32,11 @@ const Login = () => {
       contraseña: data.contraseña
     })
     console.log(userData);
+
+    //al margen de que me lleve directo a peliculas, voy a poder ingresar directamente, siempre y cuando el token sea true
+    localStorage.setItem('token',"true")
+
+    //me lleva directo a peliculas
     navigate('/peliculas')
   }
 
