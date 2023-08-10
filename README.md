@@ -1,8 +1,15 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Axios-> para el manejo de la conectividad con el backend
 
-Currently, two official plugins are available:
+Material IU-> interfaz
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Canvas-confetti-> interfaz
+
+Formik-> formularios
+
+YUp-> validacion en formularios
+
+React-Router-Dom-> para el manejo de rutas
+
+Json-server-> pruebas para el backend
