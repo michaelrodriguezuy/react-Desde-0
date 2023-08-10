@@ -8,10 +8,16 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Button, IconButton } from '@mui/material';
 
+import {useParams} from 'react-router-dom'
+
 const Pelicula = ({movie, handleLike, deleteMovieById}) => {
 
     let {name, genre, description, createdAt, img, isLiked} = movie
  
+    // rutas dinamicas
+  /* let {id} = useParams()
+  let peliSeleccionada = movie.find(peli => peli.id === parseInt(id)) */
+
     return (
 
         <Card sx={{ width: 300, height: 650 }}>
@@ -30,6 +36,7 @@ const Pelicula = ({movie, handleLike, deleteMovieById}) => {
         <Typography variant="body2" color="text.secondary">
           <h4>{genre}</h4>
             <p> {description} </p>
+
         </Typography>
       </CardContent>
 

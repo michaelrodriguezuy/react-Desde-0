@@ -7,6 +7,7 @@ import CreateMovieModal from '../../common/createMovieModal/CreateMovideModal';
 import Pelicula from './Pelicula';
 import Header from '../../common/header/Header';
 import { AuthContext } from '../../../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Peliculas = () => {
 
@@ -61,9 +62,15 @@ const Peliculas = () => {
             .catch(error => console.log(error))
     }
     
+    const navigate = useNavigate()
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        navigate('/')
+    }    
 
     return (
         <>
+        <button onClick={handleLogout}>Cerrar Sesion</button>
             <Header setIsFavoritos={setIsFavoritos} handleOpen={handleOpen} />
             
             <CreateMovieModal open={open} handleClose={handleClose} setIsMovieCreate={setIsMovieCreate} />
@@ -78,6 +85,8 @@ const Peliculas = () => {
                     })
                 }
 
+                {/* rutas dinamicas */}
+                {/* <Link to= {`/peliculas/${movie.id}` }> Ver mas </Link> */}
             </div>
 
         </>

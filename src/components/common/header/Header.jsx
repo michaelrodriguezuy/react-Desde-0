@@ -19,8 +19,7 @@ const Header = ({setIsFavoritos, handleOpen}) => {
         }}>                        
                <Link to="/" >HOME </Link>
                 <Typography variant="title" fontSize={12} fontWeight={700} textTransform={'uppercase'}  color="primary"  align="center" > Bienvenido {userData.nombre} </Typography>
-                <Link to="/login" > CERRAR SESION</Link>
-
+                
 
             <Typography variant="title" fontSize={54} fontWeight={700} textTransform={'uppercase'}  color="primary"  align="center" > Películas </Typography>
             <div style={{display: "flex", justifyContent:"center", gap: "1rem"}}>
