@@ -25,7 +25,6 @@ function App() {
               <Route path="/peliculas" element={<Peliculas />} />
             </Route>
 
-
             <Route path="*" element={<Navigate to="/" />} />
 
           </Routes>

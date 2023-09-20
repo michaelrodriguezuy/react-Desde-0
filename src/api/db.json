@@ -16,7 +16,7 @@
       "img": "https://www.elcaminanteysusombra.com/wp/wp-content/uploads/2015/09/felicidad.jpg",
       "genre": "Biográfica",
       "createdAt": "2006",
-      "isLiked": true
+      "isLiked": false
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "img": "https://hips.hearstapps.com/hmg-prod/images/vida-es-bella2-1535453128.jpg",
       "genre": "Drama",
       "createdAt": "1997",
-      "isLiked": true
+      "isLiked": false
     },
     {
       "name": "Captain Fantastic",
