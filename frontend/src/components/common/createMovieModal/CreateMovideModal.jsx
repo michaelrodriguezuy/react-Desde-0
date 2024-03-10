@@ -38,7 +38,7 @@ const CreateMovieModal = ({ open, handleClose, setIsMovieCreate }) => {
             isLiked: false //por defecto, cuando creo una peli, no me gusta
         }
 
-        axios.post("http://localhost:4000/movies", arg)
+        axios.post("https://pelisbackend-mahwdh41u-michaelrodriguezuy.vercel.app/movies", arg)
         .then(res => {
             handleClose() //codigo 201 significa que se creo correctamente, por lo tanto cierro el modal
             

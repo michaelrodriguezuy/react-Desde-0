@@ -26,7 +26,7 @@ const Peliculas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/movies")
+      .get("https://pelisbackend-mahwdh41u-michaelrodriguezuy.vercel.app/movies")
       .then((response) => {
         setMovies(response.data);
       })
@@ -49,7 +49,7 @@ const Peliculas = () => {
     }
 
     axios
-      .patch(`http://localhost:4000/movies/${movie.id}`, {
+      .patch(`https://pelisbackend-mahwdh41u-michaelrodriguezuy.vercel.app/movies/${movie.id}`, {
         isLiked: !movie.isLiked,
       })
 
@@ -65,7 +65,7 @@ const Peliculas = () => {
 
   const deleteMovieById = (id) => {
     axios
-      .delete(`http://localhost:4000/movies/${id}`)
+      .delete(`https://pelisbackend-mahwdh41u-michaelrodriguezuy.vercel.app/movies/${id}`)
       .then((response) => setIsMovieDelete(true))
       .catch((error) => console.log(error));
   };
