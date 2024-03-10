@@ -55,13 +55,13 @@ const Login = () => {
       <form className='form-container' onSubmit={handleSubmit}>
         <Grid container alignItems="center" justifyContent="space-evenly" spacing={1} sx={{ width: "100%" }}>
 
-          <Grid item xs="12" md="7" >
+          <Grid item xs={12} md={7} >
             <TextField type='text' label="Ingrese su nombre" variant="outlined" fullWidth name="nombre" onChange={handleChange} helperText={errors.nombre || ''} value={values.nombre} error={!!errors.nombre} />
 
           </Grid>
 
 
-          <Grid item xs="12" md="7" >
+          <Grid item xs={12} md={7} >
 
             <TextField type='password' label="Ingrese su contraseña" variant="outlined" fullWidth name="contraseña" onChange={handleChange} helperText={errors.contraseña || ''} value={values.contraseña} error={!!errors.contraseña} />
           </Grid>
