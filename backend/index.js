@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: '*' })); // CORS habilitado para todos los origenes
 
 app.get('/', (req, res) => {
     res.send('Hola muñeko!'
