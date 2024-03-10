@@ -48,7 +48,7 @@ const Peliculas = () => {
         origin: { y: 0.6 }, //desde donde salen
       });
     }
-
+console.log(movie.id)
     axios
     // .get("http://localhost:4000")
     .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
