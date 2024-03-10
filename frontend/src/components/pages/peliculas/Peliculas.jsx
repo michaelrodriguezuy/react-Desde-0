@@ -26,7 +26,8 @@ const Peliculas = () => {
 
   useEffect(() => {
     axios
-      .get("https://pelisbackend.vercel.app/movies")
+    //   .get("http://localhost:4000")
+       .get("https://pelisbackend.vercel.app/movies")
       .then((response) => {
         setMovies(response.data);
       })
@@ -49,7 +50,9 @@ const Peliculas = () => {
     }
 
     axios
-      .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
+    // .get("http://localhost:4000")
+    .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
+    // .patch(`http://localhost:4000/movies/${movie.id}`, {
         isLiked: !movie.isLiked,
       })
 
