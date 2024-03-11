@@ -27,8 +27,14 @@ const Peliculas = () => {
 
   const handleLike = async (movieId) => {
     try {
+      const movieToUpdate = movies.find(movie => movie.id === movieId);
+      if (!movieToUpdate) {
+        console.error(`Movie with id ${movieId} not found.`);
+        return;
+      }
+
       const response = await axios.patch(`https://pelisbackend.vercel.app/movies/${movieId}`, {
-        isliked: !movies.find(movie => movie.id === movieId).isliked
+        isliked: !movieToUpdate.isliked
       });
 
       const updatedMovies = movies.map(movie => {
