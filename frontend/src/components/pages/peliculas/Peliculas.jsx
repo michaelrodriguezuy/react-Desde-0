@@ -30,6 +30,7 @@ const Peliculas = () => {
       .get("https://pelisbackend.vercel.app/movies")
       .then((response) => {
         setMovies(response.data);
+        console.log("response data: ", response.data);
       })
       .catch((error) => console.log(error));
 
