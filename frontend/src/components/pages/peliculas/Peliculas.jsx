@@ -51,10 +51,10 @@ const Peliculas = () => {
     }
     console.log("movie: ", movie);
 
-    axios
-      .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
-        isliked: !movie.isliked,
-      })
+    axios.patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
+  Isliked: !movie.Isliked,
+})
+
 
       .then((response) => {
         // Actualiza el estado con el valor actualizado de isLiked de la respuesta
