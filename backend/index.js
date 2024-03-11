@@ -37,7 +37,7 @@ app.patch('/movies/:id', async (req, res) => {
             WHERE id = ${id}
         `;
         
-        res.json({ id, isLiked });
+        res.json({ id, isliked });
     } catch (error) {
         console.error('Error al actualizar la película:', error);
         res.status(500).send('Error interno del servidor');

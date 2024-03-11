@@ -11,7 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Peliculas = () => {
   const [movies, setMovies] = useState([]);
-  const [isLiked, setIsLiked] = useState(false); //lo uso como bandera, para que cuando cambie el estado de isLiked, se vuelva a renderizar el componente
+  const [isliked, setIsliked] = useState(false); //lo uso como bandera, para que cuando cambie el estado de isLiked, se vuelva a renderizar el componente
 
   const [isFavoritos, setIsFavoritos] = useState(false); //este estado existe para saber si yo le di click al boton de favoritos o no, y en base a esto muestro el arreglo movies (todos) o moviesFiltro (favoritos)
 
@@ -30,14 +30,13 @@ const Peliculas = () => {
       .get("https://pelisbackend.vercel.app/movies")
       .then((response) => {
         setMovies(response.data);
-
       })
       .catch((error) => console.log(error));
 
     setIsLiked(false);
     setIsMovieCreate(false);
     setIsMovieDelete(false);
-  }, [isLiked, isMovieCreate, isMovieDelete]);
+  }, [isliked, isMovieCreate, isMovieDelete]);
   //si el estado de isLiked cambia o se agrega/elimino una peli, se vuelve a ejecutar el useEffect
 
   const handleLike = (movie) => {
@@ -49,15 +48,15 @@ const Peliculas = () => {
         origin: { y: 0.6 },
       });
     }
-    console.log("movie: ", movie);
 
-    axios.patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
-  isliked: !movie.isliked,
-})
+    axios
+      .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
+        isliked: !movie.isliked,
+      })
       .then((response) => {
         // Actualiza el estado con el valor actualizado de isLiked de la respuesta
-        console.log("response: ", response.data);
-        setIsLiked(response.data.isliked);
+
+        setIsliked(response.data.isliked);
       })
       .catch((error) => console.log(error));
   };
