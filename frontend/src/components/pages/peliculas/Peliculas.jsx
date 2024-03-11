@@ -58,7 +58,7 @@ const Peliculas = () => {
       .then((response) => {
         // Actualiza el estado con el valor actualizado de isLiked de la respuesta
         console.log("response: ", response.data);
-        setIsLiked(response.data.isliked);
+        setIsLiked(response.data.Isliked);
       })
       .catch((error) => console.log(error));
   };
