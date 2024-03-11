@@ -28,12 +28,12 @@ app.get('/movies', async (req, res) => {
 
 app.patch('/movies/:id', async (req, res) => {
     const id = req.params.id;
-    const { isLiked } = req.body;
+    const { isliked } = req.body;
 
     try {
         const result = await sql`
             UPDATE movies 
-            SET isLiked = ${isLiked}
+            SET isliked = ${isliked}
             WHERE id = ${id}
         `;
         
