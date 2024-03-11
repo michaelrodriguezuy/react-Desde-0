@@ -26,8 +26,8 @@ const Peliculas = () => {
 
   useEffect(() => {
     axios
-    //   .get("http://localhost:4000")
-       .get("https://pelisbackend.vercel.app/movies")
+      //   .get("http://localhost:4000")
+      .get("https://pelisbackend.vercel.app/movies")
       .then((response) => {
         setMovies(response.data);
       })
@@ -48,19 +48,20 @@ const Peliculas = () => {
         origin: { y: 0.6 },
       });
     }
-  console.log("movie: ",movie);
+    console.log("movie: ", movie);
+
     axios
       .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
-        isLiked: !movie.isLiked,
+        Isliked: !movie.Isliked,
       })
+
       .then((response) => {
         // Actualiza el estado con el valor actualizado de isLiked de la respuesta
-        console.log("response: ",response.data);
+        console.log("response: ", response.data);
         setIsLiked(response.data.isliked);
       })
       .catch((error) => console.log(error));
   };
-  
 
   const moviesArray = Array.isArray(movies) ? movies : [];
 
