@@ -32,23 +32,25 @@ const Peliculas = () => {
         console.error(`Movie with id ${movieId} not found.`);
         return;
       }
-
+  
+      const isCurrentlyLiked = movieToUpdate.isliked;
+  
       const response = await axios.patch(`https://pelisbackend.vercel.app/movies/${movieId}`, {
-        isliked: !movieToUpdate.isliked
+        isliked: !isCurrentlyLiked
       });
-
+  
       const updatedMovies = movies.map(movie => {
         if (movie.id === movieId) {
-          return { ...movie, isliked: !movie.isliked };
+          return { ...movie, isliked: !isCurrentlyLiked };
         }
         return movie;
       });
-
+  
       setMovies(updatedMovies);
-
-      if (!response.data.isliked) {
+  
+      if (!isCurrentlyLiked) { // Si previamente no estaba en favoritos
         confetti({
-          zindex: 999,
+          zIndex: 999,
           particleCount: 100,
           spread: 70,
           origin: { y: 0.6 },
@@ -58,6 +60,7 @@ const Peliculas = () => {
       console.log(error);
     }
   };
+  
 
   const deleteMovieById = async (id) => {
     try {
