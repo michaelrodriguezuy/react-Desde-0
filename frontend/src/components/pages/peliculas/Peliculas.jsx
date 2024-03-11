@@ -101,7 +101,7 @@ const Peliculas = () => {
             <Pelicula
               movie={movie}
               key={movie.id}
-              handleLike={handleLike}
+              handleLike={() => handleLike(movie.id)} // Pasamos solo el ID de la película
               deleteMovieById={deleteMovieById}
             />
           ))
