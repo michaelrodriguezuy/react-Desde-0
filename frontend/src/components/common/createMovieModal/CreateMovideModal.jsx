@@ -26,7 +26,7 @@ const CreateMovieModal = ({ open, handleClose, setIsMovieCreate }) => {
     }
 
     //esta funcion se ejecuta cuando se hace el envio del formulario
-    const enviarDatosBackend=(data)=>{
+    const enviarDatosBackend=(data, handleClose, setIsMovieCreate)=>{
         
         let arg={
             //estas variables deben llamarse igual que el backend
@@ -35,7 +35,7 @@ const CreateMovieModal = ({ open, handleClose, setIsMovieCreate }) => {
             createdAt: data.createdAt,            
             img: data.img,        
             genre: data.genre,   
-            isLiked: false //por defecto, cuando creo una peli, no me gusta
+            isliked: false //por defecto, cuando creo una peli, no me gusta
         }
 
         axios.post("https://pelisbackend.vercel.app/movies", arg)
@@ -57,7 +57,8 @@ const CreateMovieModal = ({ open, handleClose, setIsMovieCreate }) => {
             description: Yup.string().required('La descripción es obligatoria'),
             image: Yup.string().required('La imagen es obligatoria')
         }),  */
-        onSubmit: enviarDatosBackend
+        onSubmit: (values) => enviarDatosBackend(values, handleClose, setIsMovieCreate)
+
     })
     
     return (

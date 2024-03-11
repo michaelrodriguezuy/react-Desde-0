@@ -57,6 +57,23 @@ app.delete('/movies/:id', async (req, res) => {
     }
 });
 
+app.post('/movies', async (req, res) => {
+    const { name, description, createdAt, img, genre, isliked } = req.body;
+
+    try {
+        const result = await sql`
+            INSERT INTO movies (name, description, createdAt, img, genre, isliked)
+            VALUES (${name}, ${description}, ${createdAt}, ${img}, ${genre}, ${isliked})
+            RETURNING *
+        `;
+        res.status(201).json(result.rows[0]);
+    } catch (error) {
+        console.error('Error al crear la película:', error);
+        res.status(500).send('Error interno del servidor');
+    }
+}
+);
+
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
     console.log(`Escuchando en http://localhost:${port}`);
