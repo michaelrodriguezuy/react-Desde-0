@@ -11,7 +11,7 @@ import { Button, IconButton } from "@mui/material";
 import { useParams } from "react-router-dom";
 
 const Pelicula = ({ movie, handleLike, deleteMovieById }) => {
-  let { name, genre, description, createdAt, img, isLiked } = movie;
+  let { name, genre, description, createdAt, img, isliked } = movie;
 
   // rutas dinamicas
   /* let {id} = useParams()
@@ -36,7 +36,7 @@ const Pelicula = ({ movie, handleLike, deleteMovieById }) => {
           aria-label="add to favorites"
           onClick={() => handleLike(movie)}
         >
-          <FavoriteIcon color={isLiked ? "error" : "disabled"} />
+          <FavoriteIcon color={isliked ? "error" : "disabled"} />
         </IconButton>
         <Button
           type="button"
