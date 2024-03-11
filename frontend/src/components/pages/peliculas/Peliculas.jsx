@@ -40,7 +40,7 @@ const Peliculas = () => {
   //si el estado de isLiked cambia o se agrega/elimino una peli, se vuelve a ejecutar el useEffect
 
   const handleLike = (movie) => {
-    if (!movie.isLiked) {
+    if (!movie.isliked) {
       confetti({
         zindex: 999,
         particleCount: 100,
@@ -51,12 +51,12 @@ const Peliculas = () => {
   
     axios
       .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
-        isLiked: !movie.isLiked,
+        isliked: !movie.isliked,
       })
       .then((response) => {
         // Actualiza el estado con el valor actualizado de isLiked de la respuesta
-        console.log("isLiked: ",response.data.isLiked);
-        setIsLiked(response.data.isLiked);
+        console.log("isLiked: ",response.data.isliked);
+        setIsLiked(response.data.isliked);
       })
       .catch((error) => console.log(error));
   };
@@ -65,7 +65,7 @@ const Peliculas = () => {
   const moviesArray = Array.isArray(movies) ? movies : [];
 
   const moviesFiltro = isFavoritos
-    ? moviesArray.filter((movie) => movie.isLiked)
+    ? moviesArray.filter((movie) => movie.isliked)
     : moviesArray;
 
   const deleteMovieById = (id) => {
