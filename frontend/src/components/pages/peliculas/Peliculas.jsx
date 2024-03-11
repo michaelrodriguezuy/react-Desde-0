@@ -48,14 +48,14 @@ const Peliculas = () => {
         origin: { y: 0.6 },
       });
     }
-  
+  console.log("movie: ",movie);
     axios
       .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
         isliked: !movie.isliked,
       })
       .then((response) => {
         // Actualiza el estado con el valor actualizado de isLiked de la respuesta
-        console.log("isLiked: ",response);
+        console.log("response: ",response);
         setIsLiked(response.data.isliked);
       })
       .catch((error) => console.log(error));
