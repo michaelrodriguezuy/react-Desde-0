@@ -22,9 +22,8 @@ const Peliculas = () => {
       })
       .catch((error) => console.log(error));
 
-    setIsMovieCreate(false);
     setIsMovieDelete(false);
-  }, [isMovieCreate, isMovieDelete]);
+  }, [isMovieDelete]);
 
   const handleLike = async (movieId) => {
     try {
@@ -73,6 +72,10 @@ const Peliculas = () => {
     setIsMovieCreate(true);
   };
 
+  const handleCloseModal = () => {
+    setIsMovieCreate(false);
+  };
+
   const filteredMovies = isFavoritos ? movies.filter(movie => movie.isliked) : movies;
 
   return (
@@ -81,8 +84,8 @@ const Peliculas = () => {
       <Header setIsFavoritos={setIsFavoritos} handleOpen={handleOpenModal} />
 
       <CreateMovieModal
-        open={open}
-        handleClose={() => setIsMovieCreate(false)}
+        open={isMovieCreate}
+        handleClose={handleCloseModal}
         setIsMovieCreate={setIsMovieCreate}
       />
 
