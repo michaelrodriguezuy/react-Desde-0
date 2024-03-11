@@ -43,22 +43,23 @@ const Peliculas = () => {
     if (!movie.isLiked) {
       confetti({
         zindex: 999,
-        particleCount: 100, //cantidad de papelitos
-        spread: 70, //cuanto se esparcen
-        origin: { y: 0.6 }, //desde donde salen
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
       });
     }
-console.log(movie.id)
+  
     axios
-    // .get("http://localhost:4000")
-    .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
-    // .patch(`http://localhost:4000/movies/${movie.id}`, {
+      .patch(`https://pelisbackend.vercel.app/movies/${movie.id}`, {
         isLiked: !movie.isLiked,
       })
-
-      .then((response) => setIsLiked(response.data.movies)) //en esta peticion traigo el nuevo valor de isLiked
+      .then((response) => {
+        // Actualiza el estado con el valor actualizado de isLiked de la respuesta
+        setIsLiked(response.data.isLiked);
+      })
       .catch((error) => console.log(error));
   };
+  
 
   const moviesArray = Array.isArray(movies) ? movies : [];
 
