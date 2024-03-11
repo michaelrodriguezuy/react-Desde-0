@@ -33,7 +33,7 @@ const Peliculas = () => {
       })
       .catch((error) => console.log(error));
 
-    setIsLiked(false);
+    setIsliked(false);
     setIsMovieCreate(false);
     setIsMovieDelete(false);
   }, [isliked, isMovieCreate, isMovieDelete]);
